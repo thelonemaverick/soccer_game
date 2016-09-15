@@ -67,33 +67,25 @@ def filenamer(name,team):
     name = team +"/"+ name.lower()+".txt"
     return name
 
-try:
-    os.mkdir("sharks")
-    os.mkdir("raptors")
-    os.mkdir("dragons")
-except:
-    pass
+# Function to print letter, takes sorted team, team name as a string and date of practice as a string.
 
-# loop through each team and write the letters to folders.
-for player in dragons:
-    f = open(filenamer(player[0],"dragons"), 'w')
-    f.write(letter_to_parent.format(player[3],player[0],"Dragons", dragons_date))
-    f.close()
+def lettermaker(team_of_kids, team_name, team_date):
 
-for player in sharks:
-    f = open(filenamer(player[0],"sharks"), 'w')
-    f.write(letter_to_parent.format(player[3],player[0],"Dragons", dragons_date))
-    f.close()
-
-for player in raptors:
-    f = open(filenamer(player[0],"raptors"), 'w')
-    f.write(letter_to_parent.format(player[3],player[0],"Dragons", dragons_date))
-    f.close()
+    for player in team_of_kids:
+        try:
+            os.mkdir(team_name)
+        except:
+            pass
+        f = open(filenamer(player[0], team_name), 'w')
+        f.write(letter_to_parent.format(player[3], player[0], team_name, team_date))
+        f.close()
 
 
-# print(dragons)
-# print(len(sharks))
-# print(len(raptors))
-# print(letter_to_parent)
+lettermaker(dragons, "Dragons", dragons_date)
+lettermaker(raptors, "Raptors", raptors_date)
+lettermaker(sharks, "Sharks", sharks_date)
+
+
+
 
 
