@@ -34,10 +34,12 @@ rooklist = sorted(rookieslist, key=itemgetter(1), reverse=True)
 
 # Join both lists together for a final sort to 3 teams.
 rank_sort = vetlist + rooklist
+
 #  Use slices to pull every thirds kid in a staggered way.  3 slices, one for each team.
 dragons = rank_sort[0::3]
 sharks = rank_sort[1::3]
 raptors = rank_sort[2::3]
+
 ###########################################
 # Letter Printing Section
 ##########################################
@@ -45,7 +47,7 @@ raptors = rank_sort[2::3]
 dragons_date = "March 17, 1pm"
 sharks_date = "March 17, 3pm"
 raptors_date = "March 18, 1pm"
-# the letter we are sending to parents asci art extracredit.
+# the letter we are sending to parents with asci art for extra credit.
 letter_to_parent = """
 Dear {},
 Your child, {} has been assigned to Team {}.  The first practice is scheduled for {}.
